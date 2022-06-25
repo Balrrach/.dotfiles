@@ -93,3 +93,6 @@ require('tabout').setup {
 	}
 EOF
 
+
+""" Asyn-Tasks
+let g:asynctasks_term_pos = 'TAB'
