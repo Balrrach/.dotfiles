@@ -46,15 +46,6 @@ sunmap k
 noremap K N
 sunmap K
 
-" Forward end of word
-" noremap j e
-" noremap J E
-
-
-" Enables writing in snippets selection
-" sunmap N
-" sunmap j
-" sunmap J
 
 
 " Set space as leader key
@@ -82,4 +73,3 @@ vnoremap ; :
 " Exit from terminal
 tnoremap <silent> <Esc> <C-\><C-n>
 
-let g:asynctasks_term_pos = 'TAB'
