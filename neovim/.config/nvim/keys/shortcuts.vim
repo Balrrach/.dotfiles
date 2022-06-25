@@ -34,26 +34,26 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 
 " LSP shortcuts
-nnoremap <leader>e :vim.diagnostic.open_float()<CR>
-nnoremap <leader>h :vim.lsp.buf.hover()<CR>
-nnoremap gd :vim.lsp.buf.definition()<CR>
-nnoremap gD :vim.lsp.buf.declaration()<CR>
-nnoremap gi :vim.lsp.buf.implementation()<CR>
-nnoremap gr :vim.lsp.buf.references()<CR>
-nnoremap gR :vim.lsp.buf.rename()<CR>
-nnoremap gp :vim.lsp.buf.peekDefinition()<CR>
-nnoremap gh :vim.lsp.buf.hover()<CR>
-nnoremap gF :vim.lsp.buf.formatting()<CR>
-
-" Telescope
-nnoremap ff :Telescope find_files<CR>
-nnoremap fg :Telescope live_grep<CR>
-nnoremap fb :Telescope buffers<CR>
-nnoremap fh :Telescope help_tags<CR>
-nnoremap fr :Telescope oldfiles<CR>
+nnoremap <silent> <leader>e :vim.diagnostic.open_float()<CR>
+nnoremap <silent> <leader>h :vim.lsp.buf.hover()<CR>
+nnoremap <silent> gd :vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD :vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gi :vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr :vim.lsp.buf.references()<CR>
+nnoremap <silent> gR :vim.lsp.buf.rename()<CR>
+nnoremap <silent> gp :vim.lsp.buf.peekDefinition()<CR>
+nnoremap <silent> gh :vim.lsp.buf.hover()<CR>
+nnoremap <silent> gF :vim.lsp.buf.formatting()<CR>
 " vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
 " nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
 " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
+
+" Telescope
+nnoremap <silent> ff :Telescope find_files<CR>
+nnoremap <silent> fg :Telescope live_grep<CR>
+nnoremap <silent> fb :Telescope buffers<CR>
+nnoremap <silent> fh :Telescope help_tags<CR>
+nnoremap <silent> fr :Telescope oldfiles<CR>
 
 
 """ Snippets
