@@ -1,35 +1,56 @@
-" LSP 
-lua << EOF
-local wk = require("which-key")
-wk.register({
-["<leader>"] = {
-	f = {
-		name = "+find",
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		},
-	},
-["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show Line Diagnostics" },
-["<leader>h"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Function Info" },
-["<leader>w"] = { "<cmd>w<cr>", "Write Buffer" },
-["<leader>W"] = { "<cmd>wq<cr>", "Write Buffer and Exit" },
--- ["<leader>c"] = { "<cmd>close<cr>", "Close Buffer" },
-["<leader>c"] = { "<cmd>bd<cr>", "Close Buffer" },
-["<leader>q"] = { "<cmd>q<cr>", "Quit Buffer" },
-["<leader>Q"] = { "<cmd>q!<cr>", "Force Quit Buffer" },
-["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
-["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
-["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
-["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "List References" },
-["gR"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Function Information" },
-["gp"] = { "<cmd>lua vim.lsp.buf.peekDefinition()<CR>", "Go to Definition" },
-["gh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Token Information" },
-["gF"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },
-})
-EOF
+" Set space as leader key
+let mapleader=" "
+
+" Scroll Down with C-n and up with C-e
+" nnoremap <C-l> <C-e>
+" nnoremap <C-u> <C-y>
+
+" Next/previous buffer
+nnoremap <silent> E :bnext<CR>
+nnoremap <silent> N :bprevious<CR>
+" Next/previous tab
+map <silent> <C-e> :tabprevious<CR>
+" Next/previous window 
+nnoremap <silent> <C-w>h :wincmd h<CR>
+nnoremap <silent> <C-w>n :wincmd j<CR>
+nnoremap <silent> <C-w>e :wincmd k<CR>
+nnoremap <silent> <C-w>i :wincmd l<CR>
+
+" Map ; to :
+nnoremap ; :
+vnoremap ; :
+
+" Paste copied(not deleted) content
+
+" Exit from terminal
+tnoremap <silent> <Esc> <C-\><C-n>
+
+
+" System managment
+nnoremap <leader>w :w<CR>
+nnoremap <leader>W :wq<CR>
+nnoremap <leader>c :bd<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
+
+" LSP shortcuts
+nnoremap <leader>e :vim.diagnostic.open_float()<CR>
+nnoremap <leader>h :vim.lsp.buf.hover()<CR>
+nnoremap gd :vim.lsp.buf.definition()<CR>
+nnoremap gD :vim.lsp.buf.declaration()<CR>
+nnoremap gi :vim.lsp.buf.implementation()<CR>
+nnoremap gr :vim.lsp.buf.references()<CR>
+nnoremap gR :vim.lsp.buf.rename()<CR>
+nnoremap gp :vim.lsp.buf.peekDefinition()<CR>
+nnoremap gh :vim.lsp.buf.hover()<CR>
+nnoremap gF :vim.lsp.buf.formatting()<CR>
+
+" Telescope
+nnoremap ff :Telescope find_files<CR>
+nnoremap fg :Telescope live_grep<CR>
+nnoremap fb :Telescope buffers<CR>
+nnoremap fh :Telescope help_tags<CR>
+nnoremap fr :Telescope oldfiles<CR>
 " vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
 " nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
 " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
@@ -49,4 +70,43 @@ imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab
 smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
 imap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+
+
+""" Copia
+" ["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show Line Diagnostics" },
+" ["<leader>h"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Function Info" },
+" ["<leader>w"] = { "<cmd>w<cr>", "Write Buffer" },
+" ["<leader>W"] = { "<cmd>wq<cr>", "Write Buffer and Exit" },
+" -- ["<leader>c"] = { "<cmd>close<cr>", "Close Buffer" },
+" ["<leader>c"] = { "<cmd>bd<cr>", "Close Buffer" },
+" ["<leader>q"] = { "<cmd>q<cr>", "Quit Buffer" },
+" ["<leader>Q"] = { "<cmd>q!<cr>", "Force Quit Buffer" },
+" ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+" ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
+" ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
+" ["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "List References" },
+" ["gR"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Function Information" },
+" ["gp"] = { "<cmd>lua vim.lsp.buf.peekDefinition()<CR>", "Go to Definition" },
+" ["gh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Token Information" },
+" ["gF"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },
+" lua << EOF
+" local wk = require("which-key")
+" wk.register({
+" ["<leader>"] = {
+" 	f = {
+" 		name = "+find",
+" 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
+" 		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+" 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+" 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+" 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+" 		},
+" 	},
+" })
+" EOF
+" " vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
+" " nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
+" " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
+" 
 

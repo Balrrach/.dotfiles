@@ -46,32 +46,3 @@ sunmap k
 noremap K N
 sunmap K
 
-
-
-" Set space as leader key
-let mapleader=" "
-
-" Scroll Down with C-n and up with C-e
-" nnoremap <C-l> <C-e>
-" nnoremap <C-u> <C-y>
-
-" Next/previous buffer
-nnoremap <silent> <C-e> :bnext<CR>
-nnoremap <silent> <C-e> :bprevious<CR>
-" Next/previous tab
-map <silent> <C-e> :tabprevious<CR>
-" Next/previous window 
-nnoremap <silent> <C-w>h :wincmd h<CR>
-nnoremap <silent> <C-w>n :wincmd j<CR>
-nnoremap <silent> <C-w>e :wincmd k<CR>
-nnoremap <silent> <C-w>i :wincmd l<CR>
-
-" Map ; to :
-nnoremap ; :
-vnoremap ; :
-
-" Paste copied(not deleted) content
-
-" Exit from terminal
-tnoremap <silent> <Esc> <C-\><C-n>
-
