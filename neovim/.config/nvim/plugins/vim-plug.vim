@@ -68,7 +68,7 @@ Plug 'skywind3000/asyncrun.vim'				" Async Task Runner
 Plug 'windwp/nvim-spectre'				" Search and Replace(Study)
 Plug 'ray-x/lsp_signature.nvim'				" Show Function Signature/Information
 Plug 'terrortylor/nvim-comment'				" Comment selected text
-Plug 'LunarWatcher/auto-pairs'				" Auto pairs for (, [, {
+" Plug 'LunarWatcher/auto-pairs'				" Auto pairs for (, [, {
 Plug 'abecodes/tabout.nvim'				" Allows to exit (), {}, [] etc... using tab
 Plug 'lewis6991/gitsigns.nvim'				" Git Signs in Gutter and Chuck Management
 Plug 'sindrets/diffview.nvim'				" View diff Between a File Git Versions

@@ -1,5 +1,5 @@
 """ Autopairs
-let g:AutoPairsCompleteOnlyOnSpace = 1
+" let g:AutoPairsCompleteOnlyOnSpace = 1
 
 
 """ Treesitter
