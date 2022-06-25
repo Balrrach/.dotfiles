@@ -1,28 +1,3 @@
-" Set space as leader key
-let mapleader=" "
-
-
-nnoremap <C-l> <C-e>
-
-
-" Scroll Down with C-n and up with C-e
-nnoremap <C-l> <C-e>
-nnoremap <C-u> <C-y>
-
-" move between panes to left/bottom/top/right
-map <C-h> <C-w>h
-" map <C-n> <C-w>j
-map <C-n> <C-w>j
-" map <C-e> <C-w>k
-map <C-e> <C-w>k
-map <C-i> <C-w>l
-
-" Next buffer with C-j, previous buffer with C-y
-nnoremap <silent> <C-j> :bnext<CR>
-nnoremap <silent> <C-y> :bprevious<CR>
-
-
-
 " LSP 
 lua << EOF
 local wk = require("which-key")
@@ -31,7 +6,7 @@ wk.register({
 	f = {
 		name = "+find",
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		g = { "<cmd>Telescope buffers<cr>", "Live Grep" },
+		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },

@@ -17,8 +17,6 @@ Plug 'kyazdani42/nvim-tree.lua'				" Tree File Explorer
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }	" Turn browser text-fields into nvim instances
 Plug 'soywod/himalaya', {'rtp': 'vim'}
 
-
-
 """"""" Themes
 Plug 'pacokwon/onedarkhc.vim'
 " Plug 'romgrk/doom-one.vim'

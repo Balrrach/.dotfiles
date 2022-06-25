@@ -2,40 +2,84 @@
 " gj in order to navigate wraped lines correctly
 
 """Movement Remapping
-" Up
-noremap n gj
 " Down
+noremap n gj
+sunmap n
+
+" Up
 noremap e gk
-" Left
-noremap e k
+sunmap e
 noremap E K
+sunmap E
+
 " Right
 noremap i l
+sunmap i
 noremap I L
+sunmap I
 noremap l i
+sunmap l
 noremap L I
-
-" For inverse order search
-noremap k n
-noremap K N
-" set langmap=KN
+sunmap L
 
 " Forward end of word
-noremap j e
-noremap J E
+noremap f e
+sunmap f
+noremap F E
+sunmap F
+" noremap e f
+" noremap E F
+
+" Back a word
+noremap t b
+sunmap t
+noremap T B
+sunmap T
+noremap b t
+sunmap b
+noremap B T
+sunmap B
+
+" Search
+noremap k n
+sunmap k
+noremap K N
+sunmap K
+
+" Forward end of word
+" noremap j e
+" noremap J E
+
 
 " Enables writing in snippets selection
-sunmap n
-sunmap N
-sunmap e
-sunmap E
-sunmap i
-sunmap I
-sunmap l
-sunmap L
-" sunmap k
-" sunmap K
-sunmap j
-sunmap J
+" sunmap N
+" sunmap j
+" sunmap J
 
-onoremap i l
+
+" Set space as leader key
+let mapleader=" "
+
+" Scroll Down with C-n and up with C-e
+" nnoremap <C-l> <C-e>
+" nnoremap <C-u> <C-y>
+
+" Next/previous buffer
+nnoremap <silent> E :bnext<CR>
+nnoremap <silent> N :bprevious<CR>
+" Next/previous window 
+map <silent> <C-e> :tabprevious<CR>
+" Next/previous tab
+nnoremap <silent> H :wincmd h<CR>
+nnoremap <silent> I :wincmd l<CR>
+
+" Map ; to :
+nnoremap ; :
+vnoremap ; :
+
+" Paste copied(not deleted) content
+
+" Exit from terminal
+tnoremap <silent> <Esc> <C-\><C-n>
+
+let g:asynctasks_term_pos = 'TAB'
