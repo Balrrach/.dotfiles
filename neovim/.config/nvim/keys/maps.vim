@@ -56,13 +56,15 @@ let mapleader=" "
 " nnoremap <C-u> <C-y>
 
 " Next/previous buffer
-nnoremap <silent> E :bnext<CR>
-nnoremap <silent> N :bprevious<CR>
-" Next/previous window 
-map <silent> <C-e> :tabprevious<CR>
+nnoremap <silent> <C-e> :bnext<CR>
+nnoremap <silent> <C-e> :bprevious<CR>
 " Next/previous tab
-nnoremap <silent> H :wincmd h<CR>
-nnoremap <silent> I :wincmd l<CR>
+map <silent> <C-e> :tabprevious<CR>
+" Next/previous window 
+nnoremap <silent> <C-w>h :wincmd h<CR>
+nnoremap <silent> <C-w>n :wincmd j<CR>
+nnoremap <silent> <C-w>e :wincmd k<CR>
+nnoremap <silent> <C-w>i :wincmd l<CR>
 
 " Map ; to :
 nnoremap ; :
