@@ -11,11 +11,9 @@ Plug 'ahmedkhalf/lsp-rooter.nvim'			" Automatically Change to Working Directory 
 Plug 'embear/vim-localvimrc'				" Access Local .vimrc
 Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
 " Plug 'sheerun/vim-polyglot'				" Better Syntax Support(Investigar)
-" Plug 'kevinhwang91/nvim-bqf'				" Impruved Quickfix Window
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }	" Turn browser text-fields into nvim instances
+" Plug 'kevinhwang91/nvim-bqf'				" Improved Quickfix Window
 Plug 'soywod/himalaya', {'rtp': 'vim'}
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 """"""" Themes
 Plug 'pacokwon/onedarkhc.vim'

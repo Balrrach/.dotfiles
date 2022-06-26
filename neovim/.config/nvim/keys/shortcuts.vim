@@ -5,11 +5,15 @@ let mapleader=" "
 " nnoremap <C-l> <C-e>
 " nnoremap <C-u> <C-y>
 
+" Navigation
+nnoremap <silent> E {
+nnoremap <silent> N }
+
 " Next/previous buffer
-nnoremap <silent> E :bnext<CR>
-nnoremap <silent> N :bprevious<CR>
+nnoremap <silent> <C-E> :bnext<CR>
+nnoremap <silent> <C-N> :bprevious<CR>
 " Next/previous tab
-map <silent> <C-e> :tabprevious<CR>
+nnoremap <silent> <C-e> :tabprevious<CR>
 " Window management 
 nnoremap <silent> <C-w>h :wincmd h<CR>
 nnoremap <silent> <C-w>n :wincmd j<CR>
@@ -48,11 +52,12 @@ nnoremap <silent> gF :vim.lsp.buf.formatting()<CR>
 " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
 
 """ Telescope
-nnoremap <silent> <leader>ff :Telescope find_files<CR>
-nnoremap <silent> <leader>fg :Telescope live_grep<CR>
+nnoremap <silent> <leader>ff :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
+nnoremap <silent> <leader>fg :Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>
 nnoremap <silent> <leader>fb :Telescope buffers<CR>
 nnoremap <silent> <leader>fh :Telescope help_tags<CR>
-nnoremap <silent> <leader>fr :Telescope oldfiles<CR>
+nnoremap <silent> <leader>fr :Telescope oldfiles find_command=rg,--ignore,--hidden,--files<CR>
+nnoremap <silent> <leader>t  :Telescope file_browser<CR><C-h>
 
 """ Nvim Tree
 

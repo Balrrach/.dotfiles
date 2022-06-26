@@ -101,10 +101,17 @@ lua << EOF
 				["n"] = require('telescope.actions').move_selection_next,
 				["e"] = require('telescope.actions').move_selection_previous,
 				},
-			}
+			},
 		-- other defaults configuration here
+		extensions = {
+			file_browser = {
+				hijack_netrw = true,
+				}
+			}
 		},
 	-- other configuration values here
 	})
+
+	require("telescope").load_extension "file_browser"
 EOF
 
