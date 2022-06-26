@@ -108,9 +108,3 @@ lua << EOF
 	})
 EOF
 
-
-""" Nvim-tree
-lua << EOF
-	require'nvim-tree'.setup {}
-EOF
-

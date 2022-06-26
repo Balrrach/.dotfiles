@@ -1,4 +1,5 @@
 """ Autopairs
+let g:AutoPairs = {'(':')', '[':']', '{':'}'}
 " let g:AutoPairsCompleteOnlyOnSpace = 1
 
 
@@ -33,11 +34,11 @@ EOF
 " Load local vimrc
 let g:localvimrc_ask = 0
 let g:localvimrc_sandbox = 0
-let g:localvimrc_name= [ ".lvimrc", ".vimrc" ]
+let g:localvimrc_name = [ ".lvimrc", ".vimrc" ]
 
 
 " Formatter options
-let g:autoformat_verbosemode=2
+let g:autoformat_verbosemode = 2
 " let g:formatdef_clangformat = '"clang-format -style=file"'
 " let g:formatters_typescript = ['clangformat']
 " let g:formatdef_clangformat_file = '"clang-format -style={IndentWidth: 2}"'
@@ -57,7 +58,7 @@ let g:autoformat_remove_trailing_spaces = 0
 
 " Comment configuration
 lua << EOF
-	require('nvim_comment').setup()
+	require('Comment').setup()
 EOF
 
 

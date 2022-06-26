@@ -10,30 +10,29 @@ nnoremap <silent> E :bnext<CR>
 nnoremap <silent> N :bprevious<CR>
 " Next/previous tab
 map <silent> <C-e> :tabprevious<CR>
-" Next/previous window 
+" Window management 
 nnoremap <silent> <C-w>h :wincmd h<CR>
 nnoremap <silent> <C-w>n :wincmd j<CR>
 nnoremap <silent> <C-w>e :wincmd k<CR>
 nnoremap <silent> <C-w>i :wincmd l<CR>
 
-" Map ; to :
+""" Map ; to :
 nnoremap ; :
 vnoremap ; :
 
-" Paste copied(not deleted) content
+""" Paste copied(not deleted) content
 
 " Exit from terminal
 tnoremap <silent> <Esc> <C-\><C-n>
 
-
-" System managment
+""" System management
 nnoremap <leader>w :w<CR>
 nnoremap <leader>W :wq<CR>
 nnoremap <leader>c :bd<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 
-" LSP shortcuts
+""" LSP shortcuts
 nnoremap <silent> <leader>e :vim.diagnostic.open_float()<CR>
 nnoremap <silent> <leader>h :vim.lsp.buf.hover()<CR>
 nnoremap <silent> gd :vim.lsp.buf.definition()<CR>
@@ -48,13 +47,14 @@ nnoremap <silent> gF :vim.lsp.buf.formatting()<CR>
 " nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
 " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
 
-" Telescope
-nnoremap <silent> ff :Telescope find_files<CR>
-nnoremap <silent> fg :Telescope live_grep<CR>
-nnoremap <silent> fb :Telescope buffers<CR>
-nnoremap <silent> fh :Telescope help_tags<CR>
-nnoremap <silent> fr :Telescope oldfiles<CR>
+""" Telescope
+nnoremap <silent> <leader>ff :Telescope find_files<CR>
+nnoremap <silent> <leader>fg :Telescope live_grep<CR>
+nnoremap <silent> <leader>fb :Telescope buffers<CR>
+nnoremap <silent> <leader>fh :Telescope help_tags<CR>
+nnoremap <silent> <leader>fr :Telescope oldfiles<CR>
 
+""" Nvim Tree
 
 """ Snippets
 " Expand

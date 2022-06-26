@@ -10,12 +10,12 @@ Plug 'nvim-telescope/telescope.nvim'			" Searcher Based on Regular Expressions
 Plug 'ahmedkhalf/lsp-rooter.nvim'			" Automatically Change to Working Directory Thanks to LSP(allows to call nvim from outside project folder)
 Plug 'embear/vim-localvimrc'				" Access Local .vimrc
 Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
-Plug 'kyazdani42/nvim-tree.lua'				" Tree File Explorer
-" Plug 'scrooloose/NERDTree'				" File Explorer
 " Plug 'sheerun/vim-polyglot'				" Better Syntax Support(Investigar)
 " Plug 'kevinhwang91/nvim-bqf'				" Impruved Quickfix Window
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }	" Turn browser text-fields into nvim instances
 Plug 'soywod/himalaya', {'rtp': 'vim'}
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 """"""" Themes
 Plug 'pacokwon/onedarkhc.vim'
@@ -65,8 +65,9 @@ Plug 'skywind3000/asynctasks.vim'			" Tasks Runner
 Plug 'skywind3000/asyncrun.vim'				" Async Task Runner
 Plug 'windwp/nvim-spectre'				" Search and Replace(Study)
 Plug 'ray-x/lsp_signature.nvim'				" Show Function Signature/Information
-Plug 'terrortylor/nvim-comment'				" Comment selected text
-" Plug 'LunarWatcher/auto-pairs'				" Auto pairs for (, [, {
+Plug 'numToStr/Comment.nvim'				" Comments
+Plug 'jiangmiao/auto-pairs'				" Auto pair completion for (, [, {
+" Plug 'LunarWatcher/auto-pairs'
 Plug 'abecodes/tabout.nvim'				" Allows to exit (), {}, [] etc... using tab
 Plug 'lewis6991/gitsigns.nvim'				" Git Signs in Gutter and Chuck Management
 Plug 'sindrets/diffview.nvim'				" View diff Between a File Git Versions
