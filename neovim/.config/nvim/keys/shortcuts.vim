@@ -7,18 +7,20 @@ let mapleader=" "
 
 " Navigation
 nnoremap <silent> E {
+vnoremap <silent> E {
 nnoremap <silent> N }
+vnoremap <silent> N }
 
 " Next/previous buffer
-nnoremap <silent> <C-E> :bnext<CR>
-nnoremap <silent> <C-N> :bprevious<CR>
+map <silent> <C-E> :bnext<CR>
+map <silent> <C-N> :bprevious<CR>
 " Next/previous tab
-nnoremap <silent> <C-e> :tabprevious<CR>
+map <silent> <C-e> :tabprevious<CR>
 " Window management 
-nnoremap <silent> <C-w>h :wincmd h<CR>
-nnoremap <silent> <C-w>n :wincmd j<CR>
-nnoremap <silent> <C-w>e :wincmd k<CR>
-nnoremap <silent> <C-w>i :wincmd l<CR>
+map <silent> <C-w>h :wincmd h<CR>
+map <silent> <C-w>n :wincmd j<CR>
+map <silent> <C-w>e :wincmd k<CR>
+map <silent> <C-w>i :wincmd l<CR>
 
 """ Map ; to :
 nnoremap ; :
@@ -37,19 +39,25 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 
 """ LSP shortcuts
-nnoremap <silent> <leader>e :vim.diagnostic.open_float()<CR>
-nnoremap <silent> <leader>h :vim.lsp.buf.hover()<CR>
-nnoremap <silent> gd :vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD :vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gi :vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gr :vim.lsp.buf.references()<CR>
-nnoremap <silent> gR :vim.lsp.buf.rename()<CR>
-nnoremap <silent> gp :vim.lsp.buf.peekDefinition()<CR>
-nnoremap <silent> gh :vim.lsp.buf.hover()<CR>
-nnoremap <silent> gF :vim.lsp.buf.formatting()<CR>
-" vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
-" nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
-" nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
+lua << EOF
+local opts = { noremap=true, silent=true }
+	vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+	vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
+	-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+	-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+
+local on_attach = function(client, bufnr)
+	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+	vim.keymap.set('n', 'gF', vim.lsp.buf.formatting, bufopts)
+	vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+	vim.keymap.set('n', 'gp', vim.lsp.buf.peek, bufopts)
+	-- vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, bufopts)
+end
+EOF
 
 """ Telescope
 nnoremap <silent> <leader>ff :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>

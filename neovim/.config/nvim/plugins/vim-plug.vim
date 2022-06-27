@@ -64,14 +64,19 @@ Plug 'skywind3000/asyncrun.vim'				" Async Task Runner
 Plug 'windwp/nvim-spectre'				" Search and Replace(Study)
 Plug 'ray-x/lsp_signature.nvim'				" Show Function Signature/Information
 Plug 'numToStr/Comment.nvim'				" Comments
+Plug 'abecodes/tabout.nvim'				" Allows to exit (), {}, [] etc... using tab
 Plug 'jiangmiao/auto-pairs'				" Auto pair completion for (, [, {
 " Plug 'LunarWatcher/auto-pairs'
-Plug 'abecodes/tabout.nvim'				" Allows to exit (), {}, [] etc... using tab
+Plug 'norcalli/nvim-colorizer.lua'
+
+""" Git related
 Plug 'lewis6991/gitsigns.nvim'				" Git Signs in Gutter and Chuck Management
 Plug 'sindrets/diffview.nvim'				" View diff Between a File Git Versions
-Plug 'jalvesaq/Nvim-R'					" R IDE tools
 Plug 'tpope/vim-fugitive'				" Complete Git Management
 Plug 'rhysd/git-messenger.vim'				" Access Git Blame
+
+""" Language Related
+Plug 'jalvesaq/Nvim-R'					" R IDE tools
 Plug 'mfussenegger/nvim-jdtls'				" Java LSP full functionality
 Plug 'Groctel/pddl.vim'
 

@@ -97,3 +97,8 @@ EOF
 
 """ Asyn-Tasks
 let g:asynctasks_term_pos = 'TAB'
+
+
+""" Colorizes
+lua require'colorizer'.setup()
+

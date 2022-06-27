@@ -23,22 +23,24 @@ noremap L I
 sunmap L
 
 " Forward end of word
-noremap f e
-sunmap f
-noremap F E
-sunmap F
-" noremap e f
-" noremap E F
+" noremap f e
+" sunmap f
+" noremap F E
+" sunmap F
+" noremap j f
+" sunmap j
+" noremap J F
+" sunmap J
 
 " Back a word
-noremap t b
-sunmap t
-noremap T B
-sunmap T
-noremap b t
-sunmap b
-noremap B T
-sunmap B
+" noremap t b
+" sunmap t
+" noremap T B
+" sunmap T
+" noremap b t
+" sunmap b
+" noremap B T
+" sunmap B
 
 " Search
 noremap k n
