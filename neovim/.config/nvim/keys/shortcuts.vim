@@ -2,8 +2,8 @@
 let mapleader=" "
 
 " Scroll Down with C-n and up with C-e
-" nnoremap <C-l> <C-e>
-" nnoremap <C-u> <C-y>
+nnoremap <C-l> <C-e>
+nnoremap <C-u> <C-y>
 
 " Navigation
 nnoremap <silent> E {
@@ -12,15 +12,15 @@ nnoremap <silent> N }
 vnoremap <silent> N }
 
 " Next/previous buffer
-map <silent> <C-E> :bnext<CR>
-map <silent> <C-N> :bprevious<CR>
-" Next/previous tab
-map <silent> <C-e> :tabprevious<CR>
+map <silent> <C-e> :bnext<CR>
+map <silent> <C-n> :bprevious<CR>
 " Window management 
 map <silent> <C-w>h :wincmd h<CR>
 map <silent> <C-w>n :wincmd j<CR>
 map <silent> <C-w>e :wincmd k<CR>
 map <silent> <C-w>i :wincmd l<CR>
+" Next/previous tab
+" map <silent> <C-e> :tabprevious<CR>
 
 """ Map ; to :
 nnoremap ; :
@@ -38,26 +38,29 @@ nnoremap <leader>c :bd<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 
-""" LSP shortcuts
+" LSP
 lua << EOF
 local opts = { noremap=true, silent=true }
-	vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-	vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
-	-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-	-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-local on_attach = function(client, bufnr)
+on_attach = function(client, bufnr)
+	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 	local bufopts = { noremap=true, silent=true, buffer=bufnr }
-	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', 'gF', vim.lsp.buf.formatting, bufopts)
+ 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+ 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+ 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+ 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+ 	vim.keymap.set('n', 'gR', vim.lsp.buf.rename, bufopts)
+ 	vim.keymap.set('n', 'gF', vim.lsp.buf.formatting, bufopts)
 	vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set('n', 'gp', vim.lsp.buf.peek, bufopts)
-	-- vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, bufopts)
 end
 EOF
+
 
 """ Telescope
 nnoremap <silent> <leader>ff :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
@@ -65,7 +68,7 @@ nnoremap <silent> <leader>fg :Telescope live_grep find_command=rg,--ignore,--hid
 nnoremap <silent> <leader>fb :Telescope buffers<CR>
 nnoremap <silent> <leader>fh :Telescope help_tags<CR>
 nnoremap <silent> <leader>fr :Telescope oldfiles find_command=rg,--ignore,--hidden,--files<CR>
-nnoremap <silent> <leader>t  :Telescope file_browser<CR><C-h>
+nnoremap <silent> <leader>t  :Telescope file_browser<CR>
 
 """ Nvim Tree
 

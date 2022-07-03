@@ -17,12 +17,13 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 """"""" Themes
 Plug 'pacokwon/onedarkhc.vim'
-" Plug 'romgrk/doom-one.vim'
-" Plug 'EdenEast/nightfox.nvim'
-" Plug 'w0ng/vim-hybrid'
+Plug 'romgrk/doom-one.vim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'w0ng/vim-hybrid'
 " Plug 'KeitaNakamura/neodark.vim'			" let g:neodark#background = '#1B2126'
-
-
+Plug 'davidosomething/vim-colors-meh'
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
+Plug 'rafamadriz/neon'
 
 """"""" Icons
 Plug 'onsails/lspkind-nvim'				" vscode like icons for autocompletion fields

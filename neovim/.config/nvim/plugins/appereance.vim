@@ -1,5 +1,9 @@
 """"""" Color Settings
-colorscheme onedarkhc
+colorscheme hybrid
+" colorscheme neon
+" colorscheme onedarkhc
+" let g:neon_style="doom"
+
 hi DiagnosticError guifg=#E1171A
 " hi Visual  guifg=#000000 guibg=#e5c07b gui=none		" Highlight Color
 
