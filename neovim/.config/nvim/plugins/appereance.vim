@@ -1,5 +1,7 @@
 """"""" Color Settings
-colorscheme hybrid
+" colorscheme hybrid
+" let gruvbox_contrast_dark='soft'
+colorscheme gruvbox
 " colorscheme neon
 " colorscheme onedarkhc
 " let g:neon_style="doom"

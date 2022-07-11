@@ -4,19 +4,9 @@
 let g:dashboard_default_executive ='telescope'
 
 
-""" Key Hint
-lua << EOF
-require("which-key").setup {
-	-- your configuration comes here
-	-- or leave it empty to use the default settings
-	-- refer to the configuration section below
-}
-EOF
-
-
 """ Lualine
 lua << EOF
-require'lualine'.setup{ options = { icons_enabled = true, theme = 'onedark' } }
+require'lualine'.setup{ options = { icons_enabled = true, theme = 'gruvbox' } }
 
 local colors = {
 	bg = '#202328',

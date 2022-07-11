@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'glepnir/dashboard-nvim'				" Intro screen
 Plug 'nvim-lualine/lualine.nvim'			" Status line
 " Plug 'hoob3rt/lualine.nvim'				" Status line(Abandonned)
-Plug 'folke/which-key.nvim'				" Shows keybindings as they are pressed
 Plug 'nvim-lua/plenary.nvim'				" General vim functions
 Plug 'nvim-telescope/telescope.nvim'			" Searcher Based on Regular Expressions
 Plug 'ahmedkhalf/lsp-rooter.nvim'			" Automatically Change to Working Directory Thanks to LSP(allows to call nvim from outside project folder)
@@ -17,13 +16,13 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 """"""" Themes
 Plug 'pacokwon/onedarkhc.vim'
-Plug 'romgrk/doom-one.vim'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'w0ng/vim-hybrid'
+" Plug 'romgrk/doom-one.vim'
+" Plug 'EdenEast/nightfox.nvim'
 " Plug 'KeitaNakamura/neodark.vim'			" let g:neodark#background = '#1B2126'
-Plug 'davidosomething/vim-colors-meh'
-Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
-Plug 'rafamadriz/neon'
+" Plug 'davidosomething/vim-colors-meh'
+" Plug 'rafamadriz/neon'
+Plug 'morhetz/gruvbox'
 
 """"""" Icons
 Plug 'onsails/lspkind-nvim'				" vscode like icons for autocompletion fields
@@ -80,6 +79,7 @@ Plug 'rhysd/git-messenger.vim'				" Access Git Blame
 Plug 'jalvesaq/Nvim-R'					" R IDE tools
 Plug 'mfussenegger/nvim-jdtls'				" Java LSP full functionality
 Plug 'Groctel/pddl.vim'
+" Plug 'lervag/vimtex'
 
 
 call plug#end()
