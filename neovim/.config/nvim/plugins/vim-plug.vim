@@ -15,14 +15,14 @@ Plug 'soywod/himalaya', {'rtp': 'vim'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 """"""" Themes
-Plug 'pacokwon/onedarkhc.vim'
-Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
+" Plug 'pacokwon/onedarkhc.vim'
+" Plug 'w0ng/vim-hybrid'
 " Plug 'romgrk/doom-one.vim'
 " Plug 'EdenEast/nightfox.nvim'
 " Plug 'KeitaNakamura/neodark.vim'			" let g:neodark#background = '#1B2126'
 " Plug 'davidosomething/vim-colors-meh'
 " Plug 'rafamadriz/neon'
-Plug 'morhetz/gruvbox'
 
 """"""" Icons
 Plug 'onsails/lspkind-nvim'				" vscode like icons for autocompletion fields
@@ -76,10 +76,10 @@ Plug 'tpope/vim-fugitive'				" Complete Git Management
 Plug 'rhysd/git-messenger.vim'				" Access Git Blame
 
 """ Language Related
-Plug 'jalvesaq/Nvim-R'					" R IDE tools
-Plug 'mfussenegger/nvim-jdtls'				" Java LSP full functionality
-Plug 'Groctel/pddl.vim'
 " Plug 'lervag/vimtex'
+Plug 'mfussenegger/nvim-jdtls'				" Java LSP full functionality
+" Plug 'jalvesaq/Nvim-R'					" R IDE tools
+" Plug 'Groctel/pddl.vim'
 
 
 call plug#end()

@@ -5,28 +5,6 @@ set completeopt=menu,menuone,noinsert
 
 
 
-
-
-
-""" LSP Servers
-
-lua << EOF
-local nvim_lsp = require 'lspconfig'
-local servers = require("nvim-lsp-installer").get_installed_servers()
-for _, server in ipairs(servers) do
-	nvim_lsp[server.name].setup {
-		on_attach = on_attach,
-		flags = lsp_flags,
-	}
-end
-
--- require'lspconfig'.clangd.setup{
--- 	on_attach = on_attach,
--- 	flags = lsp_flags,
--- }
-EOF
-
-
 """ nvim-lsp-installer
 lua <<EOF
 local lsp_installer = require("nvim-lsp-installer")
@@ -49,6 +27,25 @@ function(server)
 end
 )
 EOF
+
+
+
+""" LSP Servers
+" lua << EOF
+" local nvim_lsp = require 'lspconfig'
+" local servers = require("nvim-lsp-installer").get_installed_servers()
+" for _, server in ipairs(servers) do
+" 	print(server.name)
+" 	nvim_lsp[server.name].setup {
+" 		on_attach = on_attach,
+" 		flags = lsp_flags,
+" 	}
+" end
+" -- require'lspconfig'.clangd.setup{
+" -- 	on_attach = on_attach,
+" -- 	flags = lsp_flags,
+" -- }
+" EOF
 
 
 
@@ -149,7 +146,4 @@ tabnine:setup({
 	};
 })
 EOF
-
-
-
 
