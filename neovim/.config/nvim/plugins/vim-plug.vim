@@ -13,16 +13,17 @@ Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
 " Plug 'kevinhwang91/nvim-bqf'				" Improved Quickfix Window
 Plug 'soywod/himalaya', {'rtp': 'vim'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'Mofiqul/vscode.nvim'
 
 """"""" Themes
-Plug 'morhetz/gruvbox'
+Plug 'EdenEast/nightfox.nvim'
+" Plug 'morhetz/gruvbox'
+" Plug 'joshdick/onedark.vim'
 " Plug 'pacokwon/onedarkhc.vim'
 " Plug 'w0ng/vim-hybrid'
-" Plug 'romgrk/doom-one.vim'
-" Plug 'EdenEast/nightfox.nvim'
-" Plug 'KeitaNakamura/neodark.vim'			" let g:neodark#background = '#1B2126'
-" Plug 'davidosomething/vim-colors-meh'
-" Plug 'rafamadriz/neon'
+" Plug 'ajmwagar/vim-deus'
+" Plug 'Shatur/neovim-ayu'
+" Plug 'embark-theme/vim'
 
 """"""" Icons
 Plug 'onsails/lspkind-nvim'				" vscode like icons for autocompletion fields

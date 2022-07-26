@@ -155,7 +155,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Aliases
-alias zathura='zathura --mode fullscreen'
+# alias zathura='zathura --mode fullscreen'
 alias curso='cd ~/Documents/Universidad/Quinto/Segundo\ Cuatrimestre/'
 alias tfg='cd ~/Documents/Universidad/TFG/'
 

@@ -1,0 +1,5 @@
+# Always extract audio
+-x
+
+# Specify audio format
+--audio-format aac

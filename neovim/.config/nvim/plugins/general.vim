@@ -6,7 +6,7 @@ let g:dashboard_default_executive ='telescope'
 
 """ Lualine
 lua << EOF
-require'lualine'.setup{ options = { icons_enabled = true, theme = 'gruvbox' } }
+require'lualine'.setup{ options = { icons_enabled = true, theme = 'nightfox' } }
 
 local colors = {
 	bg = '#202328',
