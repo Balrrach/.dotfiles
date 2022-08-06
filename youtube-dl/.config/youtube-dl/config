@@ -2,4 +2,4 @@
 -x
 
 # Specify audio format
---audio-format aac
+--audio-format m4a

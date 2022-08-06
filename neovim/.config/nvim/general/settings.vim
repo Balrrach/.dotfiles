@@ -20,7 +20,7 @@ filetype plugin indent on	" Allow auto-indenting Depending on File Type
 " set noswapfile		" disable creating swap file
 " set backupdir=~/.cache/vim	" Directory to store backup files.
 " set spell			" Enable spell check (may need to download language package)
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=es,en_us	" Spellcheck in markdown files
+autocmd BufRead,BufNewFile *.tex,*.md setlocal spell spelllang=es,en_us	" Spellcheck in markdown files
 
 
 """ Appereance
