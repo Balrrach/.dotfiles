@@ -157,8 +157,7 @@ alias l.='exa -a | egrep "^\."'
 # Aliases
 alias sudo='sudo -E -s'
 alias wp='firefox https://web.whatsapp.com &'
-alias curso='cd ~/Documents/Universidad/Quinto/Segundo\ Cuatrimestre/'
-alias tfg='cd ~/Documents/Universidad/TFG/'
+alias tfg='cd ~/documents/Universidad/TFG/'
 alias count='texcount */*.tex'
 # alias zathura='zathura --mode fullscreen'
 
