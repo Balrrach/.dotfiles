@@ -34,7 +34,7 @@ tnoremap <silent> <Esc> <C-\><C-n>
 """ System management
 nnoremap <leader>w :w<CR>
 nnoremap <leader>W :wq<CR>
-nnoremap <leader>c :bd<CR>
+nnoremap <silent> <leader>c :bd<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 

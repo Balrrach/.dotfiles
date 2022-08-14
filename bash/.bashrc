@@ -155,9 +155,12 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Aliases
-# alias zathura='zathura --mode fullscreen'
+alias sudo='sudo -E -s'
+alias wp='firefox https://web.whatsapp.com &'
 alias curso='cd ~/Documents/Universidad/Quinto/Segundo\ Cuatrimestre/'
 alias tfg='cd ~/Documents/Universidad/TFG/'
+alias count='texcount */*.tex'
+# alias zathura='zathura --mode fullscreen'
 
 # Add bin to path
 export PATH="$HOME/bin:$PATH"

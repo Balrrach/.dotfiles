@@ -1,2 +1,2 @@
-$pdf_previewer = 'mupdf';
+$pdf_previewer = 'mupdf -C FFFFF0';
 $pdf_update_method = 2
