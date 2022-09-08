@@ -11,7 +11,6 @@ Plug 'embear/vim-localvimrc'				" Access Local .vimrc
 Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
 " Plug 'sheerun/vim-polyglot'				" Better Syntax Support(Investigar)
 " Plug 'kevinhwang91/nvim-bqf'				" Improved Quickfix Window
-Plug 'soywod/himalaya', {'rtp': 'vim'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'Mofiqul/vscode.nvim'
 
@@ -39,7 +38,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }	" Autocompletion engine
+" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }	" Autocompletion engine
 Plug 'williamboman/nvim-lsp-installer'			" Lenguage Server Installer
 " Plug 'kabouzeid/nvim-lspinstall'			" Lenguage Server Installer Alternative
 

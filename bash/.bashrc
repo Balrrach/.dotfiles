@@ -24,11 +24,11 @@ alias l.='exa -a | egrep "^\."'
 
 ## Aliases
 ### Tools
-alias sudo='sudo -E -s'
+alias su='sudo -E -s'
 alias open='xdg-open'
 alias count='texcount */*.tex'
 ### Directories
-alias shared='cd /run/media/balrrach/shared'
+alias shared='cd /run/media/balrrach/SHARED'
 alias tfg='cd ~/work/tfg/tesis'
 alias repos='cd ~/repos'
 ### Files

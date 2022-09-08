@@ -91,7 +91,7 @@ lua <<EOF
     sources = cmp.config.sources({
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'nvim_lsp' },
-      { name = 'cmp_tabnine' },
+      -- { name = 'cmp_tabnine' },
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -132,18 +132,18 @@ EOF
 
 
 """ Tabnine
-lua << EOF
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({
-	max_lines = 1000;
-	max_num_results = 20;
-	sort = true;
-	run_on_every_keystroke = true;
-	snippet_placeholder = '..';
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	};
-})
-EOF
+" lua << EOF
+" local tabnine = require('cmp_tabnine.config')
+" tabnine:setup({
+" 	max_lines = 1000;
+" 	max_num_results = 20;
+" 	sort = true;
+" 	run_on_every_keystroke = true;
+" 	snippet_placeholder = '..';
+" 	ignored_file_types = { -- default is not to ignore
+" 		-- uncomment to ignore in lua:
+" 		-- lua = true
+" 	};
+" })
+" EOF
 
