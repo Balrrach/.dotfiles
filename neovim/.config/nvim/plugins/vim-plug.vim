@@ -3,16 +3,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 """"""" General
 Plug 'glepnir/dashboard-nvim'				" Intro screen
 Plug 'nvim-lualine/lualine.nvim'			" Status line
-" Plug 'hoob3rt/lualine.nvim'				" Status line(Abandonned)
-Plug 'nvim-lua/plenary.nvim'				" General vim functions
-Plug 'nvim-telescope/telescope.nvim'			" Searcher Based on Regular Expressions
+Plug 'nvim-lua/plenary.nvim'				" Vim function collection
+
+" Searcher Based on Regular Expressions
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } 
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
 Plug 'ahmedkhalf/lsp-rooter.nvim'			" Automatically Change to Working Directory Thanks to LSP(allows to call nvim from outside project folder)
 Plug 'embear/vim-localvimrc'				" Access Local .vimrc
 Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
 " Plug 'sheerun/vim-polyglot'				" Better Syntax Support(Investigar)
 " Plug 'kevinhwang91/nvim-bqf'				" Improved Quickfix Window
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'Mofiqul/vscode.nvim'
+
 
 """"""" Themes
 Plug 'EdenEast/nightfox.nvim'
@@ -23,6 +26,7 @@ Plug 'EdenEast/nightfox.nvim'
 " Plug 'ajmwagar/vim-deus'
 " Plug 'Shatur/neovim-ayu'
 " Plug 'embark-theme/vim'
+" Plug 'Mofiqul/vscode.nvim'
 
 """"""" Icons
 Plug 'onsails/lspkind-nvim'				" vscode like icons for autocompletion fields
