@@ -1,10 +1,7 @@
 """"""" Color Settings
-" colorscheme hybrid
-" let gruvbox_contrast_dark='soft'
-colorscheme nightfox
-" colorscheme neon
-" colorscheme onedarkhc
-" let g:neon_style="doom"
+" colorscheme fogbell
+autocmd BufEnter *.c,*.cpp,*.java,*.ts,*.js,*.go,*.py colorscheme fogbell
+colorscheme hybrid
 
 hi DiagnosticError guifg=#E1171A
 " hi Visual  guifg=#000000 guibg=#e5c07b gui=none		" Highlight Color

@@ -1,6 +1,10 @@
 " Set space as leader key
 let mapleader=" "
 
+" Move through the command history with easy
+cnoremap <A-n> <Down>
+cnoremap <A-e> <Up>
+
 " Scroll Down with C-n and up with C-e
 nnoremap <C-l> <C-e>
 nnoremap <C-u> <C-y>
@@ -22,21 +26,17 @@ map <silent> <C-w>i :wincmd l<CR>
 " Next/previous tab
 " map <silent> <C-e> :tabprevious<CR>
 
-""" Map ; to :
-nnoremap ; :
-vnoremap ; :
-
 """ Paste copied(not deleted) content
 
 " Exit from terminal
 tnoremap <silent> <Esc> <C-\><C-n>
 
 """ System management
-nnoremap <leader>w :w<CR>
-nnoremap <leader>W :wq<CR>
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>W :wq<CR>
 nnoremap <silent> <leader>c :bd<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>Q :q!<CR>
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>Q :q!<CR>
 
 " LSP
 lua << EOF
@@ -122,7 +122,7 @@ smap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S
 " })
 " EOF
 " " vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
-" " nnoremap <silent> <C-p> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
+" " nnoremap <silent> <C-e> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
 " " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
 " 
 

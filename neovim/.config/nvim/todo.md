@@ -1,14 +1,15 @@
 # Fix in Neovim
 
+- Poner treesitter a funcionar des
+- Personalizar statusline para que muestre la rama de git actual
+- Echarle un vistazo a ctrlp como sustituto a telescope/fzf
+- Cambiar telescope por fzf que es más rápido y discreto. Configurarlo para que funcione con Colemak
 - Reestructurar el directorio
-- Arreglar el remap para que Colemak funcione perfectamente
 - Convertir la configuración a lua
-- Neovim crashea al pegar codigo
-- Autopairs
-- Arreglar tabout
-- Cambiar el color de los mensajes de error de lsp
-- Pedir al autor del tema actual que se inviertan los colores bajo un area seleccionada como con gitdiff
-- Aumentar el tamaño de la ventana de lsp.hover
+<!-- - Neovim crashea al pegar codigo -->
+- Tunear Autopairs
+<!-- - Pedir al autor del tema actual que se inviertan los colores bajo un area seleccionada como con gitdiff -->
+<!-- - Aumentar el tamaño de la ventana de lsp.hover -->
 
 
 # Casos de uso, requisitos y condiciones Neovim

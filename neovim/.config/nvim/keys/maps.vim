@@ -50,3 +50,9 @@ sunmap k
 noremap K N
 sunmap K
 
+""" Interchange ; to ,
+nnoremap ; ,
+vnoremap ; ,
+nnoremap , ;
+vnoremap , ;
+

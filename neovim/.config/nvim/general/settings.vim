@@ -9,7 +9,7 @@ set exrc			" Enable Loading local vimrc
 set secure			" Dont allow local vimrc to execute command line commands
 set splitbelow			" Open horizontal splits bellow
 set splitright			" Open vertical splits to the right
-
+autocmd WinNew * wincmd L	" Open all splits vertically
 
 """ System
 set mouse=v			" Enable Paste Using Middle-Click Mouse
@@ -24,22 +24,30 @@ autocmd BufRead,BufNewFile *.tex,*.md setlocal spell spelllang=es,en_us	" Spellc
 
 
 """ Appereance
-syntax on			" syntax highlighting
-set cursorline			" Highlight current cursorline
+syntax off			" syntax highlighting
+" set cursorline		" Highlight current cursorline
 " set cc=100			" Vertical Line at Given Character Number for proper Coding Style
-set termguicolors		" Correct theme display
+" set termguicolors		" Correct theme display
 set noshowmode			" Dont show --INSERT--
 set pumheight=10		" Size of suggestions window
-let g:asyncrun_open=8		" Tamaño del buffer de compilacion
-" set cmdheight=2		" More space for error mesagges
+" let g:asyncrun_open=8		" Tamaño del buffer de compilacion
+set cmdheight=1		" More space for error mesagges
 set nowrap			" Display lines as one long line
 set scrolloff=8			" Lines of preview verticallyly
 set sidescrolloff=8		" Lines of preview horizontally
+" set number relativenumber	" Relative Numbers in the Margins
 set signcolumn=yes		" Diagtostics room in gutter
-set number relativenumber	" Relative Numbers in the Margins
-au BufRead,BufNewFile *.md  setlocal wrap linebreak	" Line wrap in Markdown files
-au BufRead,BufNewFile *.tex  setlocal wrap linebreak	" Line wrap in Latex files
+" set scl=no			" No signcolumn
+hi SignColumn ctermbg=256	" Black color for the signcolumn
 
+
+set breakindent " Indents word-wrapped lines as much as the 'parent' line
+" Ensures word-wrap does not split words
+set formatoptions=l
+set lbr
+
+au BufRead,BufNewFile *.md,*.tex setlocal wrap linebreak	" Line wrap in Markdown, LaTexfiles
+au BufRead,BufNewFile *Trouble setlocal wrap linebreak		" Line wrap in Trouble files
 
 
 """ Indentation

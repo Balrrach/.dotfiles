@@ -27,6 +27,8 @@ alias l.='exa -a | egrep "^\."'
 alias su='sudo -E -s'
 alias open='xdg-open'
 alias count='texcount */*.tex'
+alias fd='cd "$(find -type d | fzf --preview '\''tree -C -d -L 1 {}'\'' --height 96% --margin 10,5,10,5 --padding 5,10,5,10 | head -n 10)"'
+alias ff='xdg-open "$(fzf)"'
 ### Directories
 alias shared='cd /run/media/balrrach/SHARED'
 alias tfg='cd ~/work/tfg/tesis'
