@@ -86,14 +86,15 @@ let s:palette = {'gui' : {} , 'cterm' : {}}
 
 if exists("g:hybrid_reduced_contrast") && g:hybrid_reduced_contrast == 1
   " let s:gui_background = "#232c31"
-  let s:gui_background = "#121212"
+  " let s:gui_background = "#121212"
+  let s:gui_background = "#000000"
   let s:gui_selection  = "#425059"
   let s:gui_line       = "#2d3c46"
   " let s:gui_comment    = "#6c7a80"
   let s:gui_comment    = "#6B6B6B"
 else
   " let s:gui_background = "#121212"
-  let s:gui_background = "#121212"
+  let s:gui_background = "#000000"
   let s:gui_selection  = "#373b41"
   let s:gui_line       = "#282a2e"
   " let s:gui_comment    = "#707880"
@@ -152,7 +153,7 @@ else
   let s:cterm_delbg      = "167"
 endif
 
-let s:palette.cterm.background = { 'dark' : "233"              , 'light' : "254" }
+let s:palette.cterm.background = { 'dark' : "16"              , 'light' : "254" }
 let s:palette.cterm.foreground = { 'dark' : s:cterm_foreground , 'light' : "16"  }
 let s:palette.cterm.window     = { 'dark' : "236"              , 'light' : "247" }
 let s:palette.cterm.selection  = { 'dark' : s:cterm_selection  , 'light' : "250" }

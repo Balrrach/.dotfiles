@@ -80,7 +80,6 @@ Plug 'mfussenegger/nvim-jdtls'				" Java LSP full functionality
 " Plug 'jalvesaq/Nvim-R'					" R IDE tools
 " Plug 'Groctel/pddl.vim'
 
-
 call plug#end()
 
 

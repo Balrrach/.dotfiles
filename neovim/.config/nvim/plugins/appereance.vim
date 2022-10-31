@@ -1,7 +1,8 @@
 """"""" Color Settings
 " colorscheme fogbell
-autocmd BufEnter *.c,*.cpp,*.java,*.ts,*.js,*.go,*.py colorscheme fogbell
-colorscheme hybrid
+" autocmd BufEnter *.c,*.cpp,*.java,*.ts,*.js,*.go,*.py colorscheme fogbell
+colorscheme fogbell
+autocmd BufEnter *.tex,*.md,*.vim colorscheme hybrid
 
 hi DiagnosticError guifg=#E1171A
 " hi Visual  guifg=#000000 guibg=#e5c07b gui=none		" Highlight Color

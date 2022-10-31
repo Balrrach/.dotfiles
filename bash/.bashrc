@@ -31,7 +31,7 @@ alias fd='cd "$(find -type d | fzf --preview '\''tree -C -d -L 1 {}'\'' --height
 alias ff='xdg-open "$(fzf)"'
 ### Directories
 alias shared='cd /run/media/balrrach/SHARED'
-alias tfg='cd ~/work/tfg/tesis'
+alias tfg='cd ~/repos/tfg/thesis'
 alias repos='cd ~/repos'
 ### Files
 #alias cp="cp -i"                          # confirm before overwriting something

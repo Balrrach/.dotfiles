@@ -38,7 +38,8 @@ endfun
 " ==========================
 " Color Variables
 " ==========================
-let s:voidBlack = {'gui': '#121212', 'cterm256': '233'}
+" let s:voidBlack = {'gui': '#121212', 'cterm256': '233'}
+let s:voidBlack = {'gui': '#121212', 'cterm256': '16'}
 let s:voidBlack2 = {'gui': '#262626', 'cterm256': '235'}
 let s:voidGray1 = {'gui': '#3E3D32', 'cterm256': '237'}
 let s:voidGray2 = {'gui': '#49483E', 'cterm256': '239'}
