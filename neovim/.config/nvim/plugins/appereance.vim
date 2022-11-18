@@ -1,11 +1,15 @@
 """"""" Color Settings
 " colorscheme fogbell
 " autocmd BufEnter *.c,*.cpp,*.java,*.ts,*.js,*.go,*.py colorscheme fogbell
-colorscheme fogbell
-autocmd BufEnter *.tex,*.md,*.vim colorscheme hybrid
+" colorscheme fogbell
+" autocmd BufEnter *.tex,*.md,*.vim colorscheme hybrid
 
 hi DiagnosticError guifg=#E1171A
+" set termguicolor
 " hi Visual  guifg=#000000 guibg=#e5c07b gui=none		" Highlight Color
+
+" highlight Comment ctermfg=Red
+" hi LineNr ctermfg=Yellow
 
 
 """ Change Icons

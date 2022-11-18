@@ -1,6 +1,5 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-
 """"""" General
 " Plug 'glepnir/dashboard-nvim'				" Intro screen
 Plug 'nvim-lualine/lualine.nvim'			" Status line
@@ -16,6 +15,7 @@ Plug 'lambdalisue/suda.vim'				" Allows to read/write super user files
 " Plug 'sheerun/vim-polyglot'				" Better Syntax Support(Investigar)
 " Plug 'kevinhwang91/nvim-bqf'				" Improved Quickfix Window
 " Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'junegunn/goyo.vim'
 
 
 """"""" Themes

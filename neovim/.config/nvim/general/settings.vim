@@ -9,7 +9,8 @@ set exrc			" Enable Loading local vimrc
 set secure			" Dont allow local vimrc to execute command line commands
 set splitbelow			" Open horizontal splits bellow
 set splitright			" Open vertical splits to the right
-autocmd WinNew * wincmd L	" Open all splits vertically
+autocmd TabNew * wincmd L	" Open all splits vertically
+" Averiguar como hacer referencia a commmand-line-window para hacer una excepción
 
 """ System
 set mouse=v			" Enable Paste Using Middle-Click Mouse
@@ -28,18 +29,18 @@ syntax off			" syntax highlighting
 " set cursorline		" Highlight current cursorline
 " set cc=100			" Vertical Line at Given Character Number for proper Coding Style
 " set termguicolors		" Correct theme display
-set noshowmode			" Dont show --INSERT--
+" set noshowmode			" Dont show --INSERT--
 set pumheight=10		" Size of suggestions window
 " let g:asyncrun_open=8		" Tamaño del buffer de compilacion
 set cmdheight=1		" More space for error mesagges
 set nowrap			" Display lines as one long line
-set scrolloff=8			" Lines of preview verticallyly
+set scrolloff=8			" Lines of preview vertically
 set sidescrolloff=8		" Lines of preview horizontally
-" set number relativenumber	" Relative Numbers in the Margins
+set number relativenumber	" Relative Numbers in the Margins
 set signcolumn=yes		" Diagtostics room in gutter
 " set scl=no			" No signcolumn
 hi SignColumn ctermbg=256	" Black color for the signcolumn
-
+set guicursor=i:block
 
 set breakindent " Indents word-wrapped lines as much as the 'parent' line
 " Ensures word-wrap does not split words

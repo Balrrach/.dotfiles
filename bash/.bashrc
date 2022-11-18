@@ -16,11 +16,11 @@ xhost +local:root > /dev/null 2>&1 # Get rid of command verbosity
 eval "$(starship init bash)"
 
 ## Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+alias ls='exa -al --group-directories-first' # my preferred listing
+alias la='exa -a --group-directories-first'  # all files and dirs
+alias ll='exa -l --group-directories-first'  # long format
+alias lt='exa -aT --group-directories-first' # tree listing
+alias l.='exa -a | grep -E "^\."'
 
 ## Aliases
 ### Tools
@@ -29,9 +29,10 @@ alias open='xdg-open'
 alias count='texcount */*.tex'
 alias fd='cd "$(find -type d | fzf --preview '\''tree -C -d -L 1 {}'\'' --height 96% --margin 10,5,10,5 --padding 5,10,5,10 | head -n 10)"'
 alias ff='xdg-open "$(fzf)"'
+alias vim='nvim'
 ### Directories
 alias shared='cd /run/media/balrrach/SHARED'
-alias tfg='cd ~/repos/tfg/thesis'
+alias tfg='cd ~/repos/tfg'
 alias repos='cd ~/repos'
 ### Files
 #alias cp="cp -i"                          # confirm before overwriting something
