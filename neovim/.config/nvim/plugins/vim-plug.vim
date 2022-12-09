@@ -1,5 +1,9 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ThePrimeagen/harpoon'
+
 """"""" General
 " Plug 'glepnir/dashboard-nvim'				" Intro screen
 Plug 'nvim-lualine/lualine.nvim'			" Status line
