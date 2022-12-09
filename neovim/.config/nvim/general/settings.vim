@@ -47,7 +47,7 @@ set breakindent " Indents word-wrapped lines as much as the 'parent' line
 set formatoptions=l
 set lbr
 
-au BufRead,BufNewFile *.md,*.tex setlocal wrap linebreak	" Line wrap in Markdown, LaTexfiles
+au BufRead,BufNewFile *.md,*.tex,*.txt setlocal wrap linebreak	" Line wrap in Markdown, LaTexfiles
 au BufRead,BufNewFile *Trouble setlocal wrap linebreak		" Line wrap in Trouble files
 
 
