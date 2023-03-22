@@ -12,6 +12,9 @@ hi DiffDelete ctermfg=255
 hi DiffAdd ctermbg=22
 hi DiffChange ctermfg=0
 
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
+
 autocmd BufEnter *.vim TSEnable highlight
 
 
