@@ -20,6 +20,7 @@ lua << EOF
 			"node_modules",
 			"build",
 			"CMakeFiles",
+			".git",
 			},
 
 		mappings = {
@@ -29,10 +30,9 @@ lua << EOF
 				},
 			},
 		-- other defaults configuration here
-		extensions = {},
+		extensions = {"dap"},
 	-- other configuration values here
 	}
 	})
-	
 EOF
 

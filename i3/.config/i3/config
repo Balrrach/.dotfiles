@@ -68,11 +68,21 @@ bindsym $mod+BackSpace  exec --no-startup-id ~/.config/rofi/launchers/type-4/lau
 # bindsym $mod+s exec --no-startup-id rofi
 # bindcode 133 --release exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
 
+# Alt workspace
+bindsym $mod+Tab workspace back_and_forth
+
 # change focus
+# ipc_socket "/run/user/1000/i3/ipc-socket.1000"
+
 bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
+bindsym $mod+e workspace prev
+bindsym $mod+i workspace next
 bindsym $mod+o focus right
+
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
+# bindsym $mod+comma focus output left
+# bindsym $mod+period focus output right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -99,7 +109,7 @@ bindsym $mod+h split horizontal
 bindsym $mod+j split vertical
 
 # enter fullscreen mode for the focused container
-bindsym $mod+"," fullscreen toggle
+bindsym $mod+Escape fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+l layout stacking
@@ -157,9 +167,9 @@ bindsym $mod+c workspace number $ws4
 bindsym $mod+s workspace number $ws5
 bindsym $mod+f workspace number $ws6
 
-bindsym $mod+p workspace number $ws7
+bindsym $mod+v workspace number $ws7
 bindsym $mod+t workspace number $ws8
-bindsym $mod+v workspace number $ws9
+bindsym $mod+p workspace number $ws9
 
 
 # move focused container to workspace

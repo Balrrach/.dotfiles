@@ -14,17 +14,17 @@ nnoremap <silent> E {
 vnoremap <silent> E {
 nnoremap <silent> N }
 vnoremap <silent> N }
+nnoremap <silent> <C-y> <C-o><CR>
 
 " Next/previous buffer
-map <silent> <C-e> :bnext<CR>
-map <silent> <C-n> :bprevious<CR>
+nnoremap <silent> <C-,> :bnext<CR>
+nnoremap <silent> <C-.> :bprevious<CR>
+
 " Window management 
-map <silent> <C-w>h :wincmd h<CR>
-map <silent> <C-w>n :wincmd j<CR>
-map <silent> <C-w>e :wincmd k<CR>
-map <silent> <C-w>i :wincmd l<CR>
-" Next/previous tab
-" map <silent> <C-e> :tabprevious<CR>
+nnoremap <silent> <C-n> :wincmd h<CR>
+nnoremap <silent> <C-e> :wincmd j<CR>
+nnoremap <silent> <C-i> :wincmd k<CR>
+nnoremap <silent> <C-o> :wincmd l<CR>
 
 """ Paste copied(not deleted) content
 
@@ -88,41 +88,18 @@ imap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S
 smap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 
+" DAP
+nnoremap <silent> <F4> <Cmd>lua require'dapui'.toggle()<CR>
+nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+nnoremap <silent> <F6> <Cmd>lua require'dap'.close()<CR>
+nnoremap <silent> <F7> <Cmd>lua require'dap'.step_over()<CR>
+nnoremap <silent> <F8> <Cmd>lua require'dap'.step_into()<CR>
+nnoremap <silent> <F9> <Cmd>lua require'dap'.step_out()<CR>
 
-""" Copia
-" ["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show Line Diagnostics" },
-" ["<leader>h"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Function Info" },
-" ["<leader>w"] = { "<cmd>w<cr>", "Write Buffer" },
-" ["<leader>W"] = { "<cmd>wq<cr>", "Write Buffer and Exit" },
-" -- ["<leader>c"] = { "<cmd>close<cr>", "Close Buffer" },
-" ["<leader>c"] = { "<cmd>bd<cr>", "Close Buffer" },
-" ["<leader>q"] = { "<cmd>q<cr>", "Quit Buffer" },
-" ["<leader>Q"] = { "<cmd>q!<cr>", "Force Quit Buffer" },
-" ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
-" ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
-" ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
-" ["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "List References" },
-" ["gR"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Function Information" },
-" ["gp"] = { "<cmd>lua vim.lsp.buf.peekDefinition()<CR>", "Go to Definition" },
-" ["gh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Token Information" },
-" ["gF"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },
-" lua << EOF
-" local wk = require("which-key")
-" wk.register({
-" ["<leader>"] = {
-" 	f = {
-" 		name = "+find",
-" 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-" 		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-" 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-" 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
-" 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-" 		},
-" 	},
-" })
-" EOF
-" " vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
-" " nnoremap <silent> <C-e> :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<CR>
-" " nnoremap <silent> <C-n> :lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<CR>
-" 
+nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <Leader>gd <Cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>
 

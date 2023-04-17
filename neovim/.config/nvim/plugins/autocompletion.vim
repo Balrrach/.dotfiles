@@ -5,47 +5,23 @@ set completeopt=menu,menuone,noinsert
 
 
 
-""" nvim-lsp-installer
+""" Mason
 lua <<EOF
-local lsp_installer = require("nvim-lsp-installer")
-
-lsp_installer.on_server_ready(
-function(server)
-	local opts = {
-		on_attach = on_attach,
-		flags = lsp_flags,
-	}
-
-	-- (optional) Customize the options passed to the server
-	-- if server.name == "tsserver" then
-	--     opts.root_dir = function() ... end
-	-- end
-
-	-- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-	server:setup(opts)
-	vim.cmd [[ do User LspAttachBuffers ]]
-end
-)
+require("mason").setup()
 EOF
 
 
 
 """ LSP Servers
-" lua << EOF
-" local nvim_lsp = require 'lspconfig'
-" local servers = require("nvim-lsp-installer").get_installed_servers()
-" for _, server in ipairs(servers) do
-" 	print(server.name)
-" 	nvim_lsp[server.name].setup {
-" 		on_attach = on_attach,
-" 		flags = lsp_flags,
-" 	}
-" end
-" -- require'lspconfig'.clangd.setup{
-" -- 	on_attach = on_attach,
-" -- 	flags = lsp_flags,
-" -- }
-" EOF
+lua << EOF
+local lspconfig = require 'lspconfig'
+
+-- C++
+require'lspconfig'.clangd.setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+EOF
 
 
 
@@ -75,18 +51,7 @@ lua <<EOF
 	['<CR>'] = cmp.mapping.confirm({ select = true }),
 	['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
 	['<C-e>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
-	-- ['<C-e>'] = cmp.mapping.close(),
-	-- ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-	-- ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-	['<Esc>'] =
-	function(fallback)
-		cmp.mapping.abort()
-		fallback()
-	end,
-	-- ['<CR>'] = function()
-	-- if not cmp.confirm({ select = false }) then
-	-- vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true), 'n', true)
-	-- ['<CR>'] = vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true), 'n', true),
+	['<C-Esc>'] = cmp.mapping.abort(),
     }),
     sources = cmp.config.sources({
       { name = 'vsnip' }, -- For vsnip users.
@@ -111,7 +76,11 @@ lua <<EOF
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
+    mapping = cmp.mapping.preset.cmdline({
+	  -- ['<C-n>'] = cmp.select_next_item(),
+	  -- ['<C-e>'] = cmp.select_prev_item(),
+	  ['<C-e>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+    }),
     sources = {
       { name = 'buffer' }
     }

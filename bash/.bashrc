@@ -86,5 +86,6 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 ## Layout Change
 alias colemak="setxkbmap -variant colemak"
 alias us="setxkbmap us"
+alias w="source ~/.xprofile"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
