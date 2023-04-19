@@ -6,14 +6,14 @@ cnoremap <A-n> <Down>
 cnoremap <A-e> <Up>
 
 " Scroll Down with C-n and up with C-e
-nnoremap <C-l> <C-e>
-nnoremap <C-u> <C-y>
+" nnoremap <C-l> <C-e>
+" nnoremap <C-u> <C-y>
 
 " Navigation
-nnoremap <silent> E {
-vnoremap <silent> E {
-nnoremap <silent> N }
-vnoremap <silent> N }
+nnoremap <silent> E <C-y>
+vnoremap <silent> E <C-y>
+nnoremap <silent> N <C-e>
+vnoremap <silent> N <C-e>
 nnoremap <silent> <C-y> <C-o><CR>
 
 " Next/previous buffer

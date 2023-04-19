@@ -1,6 +1,7 @@
 """"""" Color Settings
 
 colorscheme default
+hi Comment ctermfg=254
 hi NormalFloat ctermfg=255
 hi Pmenu ctermbg=0
 hi Pmenu ctermfg=255
@@ -10,7 +11,9 @@ hi SpellLocal ctermfg=0
 hi DiffDelete ctermbg=1
 hi DiffDelete ctermfg=255
 hi DiffAdd ctermbg=22
+hi DiffAdd ctermfg=255
 hi DiffChange ctermfg=0
+hi DiffText ctermfg=0
 
 hi clear CursorLine
 hi CursorLine gui=underline cterm=underline

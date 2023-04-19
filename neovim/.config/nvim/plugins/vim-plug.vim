@@ -8,6 +8,7 @@ Plug 'ThePrimeagen/harpoon'
 " Plug 'glepnir/dashboard-nvim'				" Intro screen
 " Plug 'nvim-lualine/lualine.nvim'			" Status line
 Plug 'nvim-lua/plenary.nvim'				" Vim function collection
+Plug 'karb94/neoscroll.nvim'
 
 " Searcher Based on Regular Expressions
 Plug 'nvim-telescope/telescope.nvim', {	'tag': '0.1.0' } 
