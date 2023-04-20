@@ -3,3 +3,13 @@
 	name = Baltasar del Sol de Haro
 [core]
 	editor = nvim
+
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[merge]
+  tool = nvim
+
+[mergetool]
+  prompt = false
+
