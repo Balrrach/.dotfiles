@@ -37,6 +37,8 @@ nnoremap <silent> <leader>W :wq<CR>
 nnoremap <silent> <leader>c :bd<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
+nnoremap <silent> <leader><leader>q :qall<CR>
+nnoremap <silent> <leader><leader>Q :qall!<CR>
 
 " LSP
 lua << EOF
@@ -88,7 +90,7 @@ imap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S
 smap <expr> <S-Tab>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 
-" DAP
+""" DAP
 nnoremap <silent> <F4> <Cmd>lua require'dapui'.toggle()<CR>
 nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
 nnoremap <silent> <F6> <Cmd>lua require'dap'.close()<CR>
@@ -101,5 +103,49 @@ nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('B
 nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
 nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
-nnoremap <silent> <Leader>gd <Cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>
+nnoremap <silent> <Leader>gb <Cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>
+
+
+""" Git
+" Diffview
+nnoremap <silent> <Leader>gd :DiffviewOpen<CR>
+nnoremap <silent> <Leader>gD :DiffviewClose<CR>
+
+" Fugitive
+nnoremap <silent> gd :Gvdiffsplit!<CR>
+nnoremap <silent> gn ]c
+nnoremap <silent> ge [c
+nnoremap <silent> gh :diffget //2<CR>
+nnoremap <silent> gi :diffget //3<CR>
+nnoremap <silent> gl :diffget<CR>
+nnoremap <silent> gu :diffput<CR>
+nnoremap <silent> gw :Gwrite<CR>
+nnoremap <silent> gq <C-w><C-o><CR>
+
+" Gitsigns
+lua << EOF
+require('gitsigns').setup{
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    map('n', 'gn', function()
+      if vim.wo.diff then return ']c' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    map('n', 'ge', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+  end
+}
+EOF
 

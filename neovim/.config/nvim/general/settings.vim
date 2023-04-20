@@ -8,8 +8,9 @@ set hidden			" Allows to change buffers that haven't saved their content
 set exrc			" Enable Loading local vimrc
 set secure			" Dont allow local vimrc to execute command line commands
 set splitbelow			" Open horizontal splits bellow
-set splitright			" Open vertical splits to the right
-autocmd TabNew * wincmd L	" Open all splits vertically
+" set splitright			" Open vertical splits to the right
+autocmd TabNew * wincmd L	" Open all tabs vertically
+autocmd FileType help wincmd L	" Open help window vertically
 " Averiguar como hacer referencia a commmand-line-window para hacer una excepción
 
 """ System

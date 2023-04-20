@@ -89,3 +89,5 @@ alias us="setxkbmap us"
 alias w="source ~/.xprofile"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export TERMINAL="kitty"
+

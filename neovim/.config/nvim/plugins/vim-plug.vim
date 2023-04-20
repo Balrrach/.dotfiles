@@ -65,7 +65,7 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
 Plug 'folke/trouble.nvim'				" LSP Error Viewer
-Plug 'LunarWatcher/auto-pairs'
+" Plug 'LunarWatcher/auto-pairs'
 " Plug 'jiangmiao/auto-pairs'				" Auto pair completion for (, [, {
 " Plug 'abecodes/tabout.nvim'				" Allows to exit (), {}, [] etc... using tab
 " Plug 'ahmedkhalf/project.nvim'				" Project Management
@@ -79,7 +79,6 @@ Plug 'LunarWatcher/auto-pairs'
 
 """ Git related
 Plug 'lewis6991/gitsigns.nvim'				" Git Signs in Gutter and Chuck Management
-Plug 'sindrets/diffview.nvim'				" View diff Between a File Git Versions
 Plug 'tpope/vim-fugitive'				" Complete Git Management
 Plug 'rhysd/git-messenger.vim'				" Access Git Blame
 
