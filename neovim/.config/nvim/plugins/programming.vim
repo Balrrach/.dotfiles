@@ -34,7 +34,8 @@ lua << EOF
 	require('Comment').setup()
 EOF
 
-
+""" Fugitive
+set diffopt+=vertical
 
 """ Gitsigns
 lua << EOF
