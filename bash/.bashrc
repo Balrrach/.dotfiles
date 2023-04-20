@@ -16,9 +16,9 @@ xhost +local:root > /dev/null 2>&1 # Get rid of command verbosity
 eval "$(starship init bash)"
 
 ## Changing "ls" to "exa"
-alias ls='exa -al --group-directories-first' # my preferred listing
+alias l='exa -l --group-directories-first'  # long format
+alias ll='exa -al --group-directories-first' # my preferred listing
 alias la='exa -a --group-directories-first'  # all files and dirs
-alias ll='exa -l --group-directories-first'  # long format
 alias lt='exa -aT --group-directories-first' # tree listing
 alias l.='exa -a | grep -E "^\."'
 
@@ -90,4 +90,4 @@ alias w="source ~/.xprofile"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export TERMINAL="kitty"
-
+alias lg="lazygit"
