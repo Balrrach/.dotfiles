@@ -1,0 +1,34 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - default # set to `default` to have no background colour
+    cherryPickedCommitBgColor:
+      - blue
+    cherryPickedCommitFgColor:
+      - black
+
+keybinding:
+  universal:
+    prevItem-alt: 'e' # go one line up
+    nextItem-alt: 'n' # go one line down
+    prevBlock-alt: 'h' # goto the previous block / panel
+    nextBlock-alt: 'i' # goto the next block / panel
+    prevBlock-alt: 'E' # main panel scroll up
+    nextBlock-alt: 'N' # main panel scroll down
+    nextMatch: 'k'
+    prevMatch: 'K'
+    edit: 'l'
+    new: 'k'
+
+  files:
+    ignoreFile: 'j'
+
+  branches:
+    viewGitFlowOptions: 'j'
+
+  submodules:
+    init: 'j'
+
+  commits:
+    moveDownCommit: '<c-n>' # move commit down one
+    moveUpCommit: '<c-e>' # move commit up one
