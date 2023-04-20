@@ -48,19 +48,34 @@ vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-on_attach = function(client, bufnr)
-	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-	local bufopts = { noremap=true, silent=true, buffer=bufnr }
- 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
- 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
- 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
- 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
- 	vim.keymap.set('n', 'gR', vim.lsp.buf.rename, bufopts)
- 	vim.keymap.set('n', 'gF', vim.lsp.buf.formatting, bufopts)
-	vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, bufopts)
-end
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', '<leader>D', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'gR', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>x', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
 EOF
 
 
@@ -101,8 +116,8 @@ nnoremap <silent> <F9> <Cmd>lua require'dap'.step_out()<CR>
 nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
 nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
-nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+" nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+" nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
 nnoremap <silent> <Leader>gb <Cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>
 
 
@@ -112,7 +127,7 @@ nnoremap <silent> <Leader>gd :DiffviewOpen<CR>
 nnoremap <silent> <Leader>gD :DiffviewClose<CR>
 
 " Fugitive
-nnoremap <silent> gd :Gvdiffsplit!<CR>
+" nnoremap <silent> gd :Gvdiffsplit!<CR>
 nnoremap <silent> gn ]c
 nnoremap <silent> ge [c
 nnoremap <silent> gh :diffget //2<CR>
