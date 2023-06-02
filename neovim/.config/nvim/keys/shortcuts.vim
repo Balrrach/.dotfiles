@@ -14,7 +14,7 @@ nnoremap <silent> E <C-y>
 vnoremap <silent> E <C-y>
 nnoremap <silent> N <C-e>
 vnoremap <silent> N <C-e>
-nnoremap <silent> <C-y> <C-o><CR>
+nnoremap <silent> <C-y> <C-o>
 
 " Next/previous buffer
 nnoremap <silent> <C-,> :bnext<CR>
