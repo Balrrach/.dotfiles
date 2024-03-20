@@ -11,8 +11,8 @@ keybinding:
   universal:
     prevItem-alt: 'e' # go one line up
     nextItem-alt: 'n' # go one line down
-    prevBlock-alt: 'h' # goto the previous block / panel
-    nextBlock-alt: 'i' # goto the next block / panel
+    # prevBlock-alt: 'h' # goto the previous block / panel
+    # nextBlock-alt: 'i' # goto the next block / panel
     prevBlock-alt: 'E' # main panel scroll up
     nextBlock-alt: 'N' # main panel scroll down
     nextMatch: 'k'

@@ -1,7 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/bdelsol/.dotfiles
-- /home/bdelsol/repos/dis
+    - /home/balrrach/repos/merkle
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
