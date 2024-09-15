@@ -1,0 +1,140 @@
+// Base: https://github.com/ttybitnik/dotfiles
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    "fixed-center": true, // Center like dwm
+    // "margin": "0 8 0 8", // 4 4 0 4; 0 8 0 8
+    // Choose the order of the modules
+    "modules-left": [
+	"hyprland/workspaces",
+	"tray"
+	// "custom/media"
+    ],
+    "modules-center": [
+	"clock"
+	// "hyprland/window"
+    ],
+    "modules-right": [
+	"network",
+	"pulseaudio",
+	"memory",
+	"cpu",
+	"temperature",
+	"backlight",
+	"battery",
+	"battery#bat2",
+	"custom/weather",
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+	"disable-scroll": false,
+	"all-outputs": false
+    },
+    "hyprland/window": {
+        "format-alt": "TTY Bitnik"
+    },
+    "hyprland/mode": {
+	"format": "[{}]"
+    },
+    "hyprland/scratchpad": {
+	"format": "{icon} {count}",
+	"show-empty": true,
+	"format-icons": ["", ""],
+	"tooltip": true,
+	"tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+	"icon-size": 12,
+	"spacing": 10
+    },
+    "clock": {
+	// "timezone": "America/New_York",
+	// "format": " {:%a, %d/%m/%y   %H:%M}",
+	"format": " {:%a, %d/%m/%y - %H:%M}",
+	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"format-alt": " {:%H:%M}",
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)   ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} 󰛳",
+        "format-linked": "{ifname} (No IP) 󰛳",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "kitty -e nmtui"
+    },
+    "cpu": {
+	    "min-length": 6,
+	"format": " {usage}%",
+	"tooltip": true
+    },
+    "memory": {
+	"min-length": 6,
+	"format": " {}%"
+    },
+    "temperature": {
+	"min-length": 6,
+	// "thermal-zone": 2,
+	// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+	"critical-threshold": 80,
+	// "format-critical": "{temperatureC}°C {icon}",
+	"format": "{icon} {temperatureC}°C",
+	"format-icons": ["", "", ""]
+    },
+    "backlight": {
+	"device": "acpi_video1",
+	"format": "{icon} {percent}%",
+	"format-icons": [ "", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+	"min-length": 6,
+	"states": {
+	    "good": 95,
+	    "warning": 30,
+	    "critical": 15
+	},
+	"format": "{icon} {capacity}%",
+	"format-charging": " {capacity}%",
+	"format-plugged": " {capacity}%",
+	"format-alt": "{icon} {time}",
+	"format-good": "",
+	"format-full": "",
+	"format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+	"bat": "BAT2"
+    },
+    "pulseaudio": {
+	"min-length": 6,
+	"scroll-step": 1,
+	"format": "{icon}  {volume}%",
+	"format-bluetooth": "{volume}% {icon} {format_source}",
+	"format-bluetooth-muted": " {icon} {format_source}",
+	"format-muted": " {volume}%",
+	"format-source": "",
+	"format-source-muted": "",
+	"format-icons": {
+	    "headphone": "",
+	    "hands-free": "",
+	    "headset": "",
+	    "phone": "",
+	    "portable": "",
+	    "car": "",
+	    "default": [""]
+	},
+	"on-click": "pavucontrol"
+    },
+    "custom/media": {
+	"format": "{icon} {}",
+	"return-type": "json",
+	"max-length": 45,
+	"format-icons": {
+	    "spotify": "<span foreground='#1DB954'></span>",
+	    "default": "🎜"
+	},
+	"escape": true,
+	"exec": "$HOME/.local/bin/media_bar --player spotify 2> /dev/null"
+    },
+}
