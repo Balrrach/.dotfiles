@@ -52,72 +52,72 @@ require('trouble').setup({
 })
 EOF
 
-""" DAP
-lua << EOF
-local dap = require('dap')
-
--- c++
-dap.adapters.lldb = {
-  type = 'executable',
-  command = '/usr/lib/llvm-10/bin/lldb-vscode', -- adjust as needed, must be absolute path
-  name = 'lldb'
-}
-dap.adapters.codelldb = {
-    type = "server",
-    port = "${port}",
-    executable = {
-        command = "/usr/bin/codelldb",
-        args = { "--port", "${port}" },
-    },
-}
-
--- UI
-local dapui = require("dapui")
-require("dapui").setup()
-dapui.setup({
-    layouts = {
-        {
-            elements = {
-                "watches",
-                { id = "breakpoints", size = 0.3 },
-                { id = "scopes", size = 0.5 },
-                { id = "repl", size = 0.2 },
-            },
-            size = 90,
-            position = "left",
-        },
-        {
-            elements = {
-                "console",
-            },
-            size = 0.2,
-            position = "bottom",
-        },
-    },
-    controls = {
-        -- Requires Neovim nightly (or 0.8 when released)
-        enabled = true,
-        -- Display controls in this element
-        element = "repl",
-    },
-})
-
-
-vim.fn.sign_define(
-    "DapBreakpoint",
-    { text = "●", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
-)
-vim.fn.sign_define(
-    "DapBreakpointCondition",
-    { text = "◆", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
-)
-vim.fn.sign_define("DapStopped", { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" })
-
-dap.defaults.fallback.force_external_terminal = true
-
--- Virtual Text
-local daptext = require("nvim-dap-virtual-text")
-daptext.setup()
-
-EOF
+" """ DAP
+" lua << EOF
+" local dap = require('dap')
+"
+" -- c++
+" dap.adapters.lldb = {
+"   type = 'executable',
+"   command = '/usr/lib/llvm-10/bin/lldb-vscode', -- adjust as needed, must be absolute path
+"   name = 'lldb'
+" }
+" dap.adapters.codelldb = {
+"     type = "server",
+"     port = "${port}",
+"     executable = {
+"         command = "/usr/bin/codelldb",
+"         args = { "--port", "${port}" },
+"     },
+" }
+"
+" -- UI
+" local dapui = require("dapui")
+" require("dapui").setup()
+" dapui.setup({
+"     layouts = {
+"         {
+"             elements = {
+"                 "watches",
+"                 { id = "breakpoints", size = 0.3 },
+"                 { id = "scopes", size = 0.5 },
+"                 { id = "repl", size = 0.2 },
+"             },
+"             size = 90,
+"             position = "left",
+"         },
+"         {
+"             elements = {
+"                 "console",
+"             },
+"             size = 0.2,
+"             position = "bottom",
+"         },
+"     },
+"     controls = {
+"         -- Requires Neovim nightly (or 0.8 when released)
+"         enabled = true,
+"         -- Display controls in this element
+"         element = "repl",
+"     },
+" })
+"
+"
+" vim.fn.sign_define(
+"     "DapBreakpoint",
+"     { text = "●", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
+" )
+" vim.fn.sign_define(
+"     "DapBreakpointCondition",
+"     { text = "◆", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
+" )
+" vim.fn.sign_define("DapStopped", { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" })
+"
+" dap.defaults.fallback.force_external_terminal = true
+"
+" -- Virtual Text
+" local daptext = require("nvim-dap-virtual-text")
+" daptext.setup()
+"
+" EOF
 
