@@ -8,6 +8,9 @@ cnoremap <A-e> <Up>
 " Scroll Down with C-n and up with C-e
 " nnoremap <C-l> <C-e>
 " nnoremap <C-u> <C-y>
+nnoremap <C-e> k
+vnoremap <C-e> k
+inoremap <C-e> <C-o>k
 
 " Navigation
 nnoremap <silent> E <C-y>
