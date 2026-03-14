@@ -20,6 +20,16 @@ sunmap k
 noremap K N
 sunmap K
 
+" Interchange M and H
+noremap m h
+sunmap m
+noremap M H
+sunmap M
+noremap H M
+sunmap h
+noremap H M
+sunmap H
+
 " Interchange I and L
 noremap i l
 sunmap i
